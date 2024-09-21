@@ -1,0 +1,9 @@
+streamlit==1.25.0
+langchain-core==0.0.12
+langchain-community==0.0.5
+langchain-huggingface==0.0.5
+huggingface-hub==0.17.2
+spacy==3.6.1
+sqlalchemy==2.0.20
+pyodbc==4.0.35
+python-dotenv==1.0.0
