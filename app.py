@@ -97,7 +97,7 @@ def convert_name_to_email(name):
     if len(parts) == 2:
         first_name, last_name = parts
         # Construct the email address
-        email = f"{first_name.lower()}.{last_name.lower()}@dhyey.com"
+        email = f"{first_name.lower()}.{last_name.lower()}@email.com"
         return email
     return None
 
@@ -105,17 +105,17 @@ def get_response(user_query: str, db: SQLDatabase, chat_history: list):
     # Handle greetings separately
     greetings = ["hi", "hello", "hola", "good morning", "good afternoon", "good evening", "good night"]
     if user_query.lower() in greetings:
-        return "Dhyey Bot: Hello! How can I assist you today?"
+        return "Bot: Hello! How can I assist you today?"
         
     # Handle conversation separately
     conversations = ["ok", "thank you", "see you", "nice", "great"]
     if user_query.lower() in conversations:
-        return "Dhyey Bot: Can I help you with anything else?"
+        return "Bot: Can I help you with anything else?"
     
     # Handle goodbye separately  
     goodbyes = ["goodbye", "bye", "ok bye"]
     if user_query.lower() in goodbyes:
-        return "Dhyey Bot: Good Bye!"
+        return "Bot: Good Bye!"
     
     # Process user query with Spacy to handle similar questions
     doc = nlp(user_query)
@@ -133,7 +133,7 @@ def get_response(user_query: str, db: SQLDatabase, chat_history: list):
 
     template = """
        You are a data analyst at a company. You are interacting with a user who is asking you questions about the company's database.
-        Based on the table schema below, question, SQL query, and SQL response, write "Dhyey Bot:" while providing a natural language response in output.
+        Based on the table schema below, question, SQL query, and SQL response, write "Bot:" while providing a natural language response in output.
 
         Use the SQL Response to give the AI response. Convert the SQL response into natural language before presenting it. Do not print the SQL response in the output; only provide the natural language response in the AI output.
         
@@ -145,7 +145,7 @@ def get_response(user_query: str, db: SQLDatabase, chat_history: list):
 
         Do not print outputs in paragraph format. Do not print Conversation history in output; only print the final output that is converted to natural language from the SQL response.
 
-        Strictly do not print {chat_history}, {query}, and {response} in the Dhyey Bot response.
+        Strictly do not print {chat_history}, {query}, and {response} in the Bot response.
 
         Do not print extra information; only give the required information to the user.
 
