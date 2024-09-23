@@ -69,6 +69,9 @@ This project is a **SQL Chatbot** that uses **LangChain**, **Hugging Face Transf
 - "How many users started tasks today?"
 - "List unique project managers."
 
+## Example Outputs:
+![Screenshot 2024-09-23 103642](https://github.com/user-attachments/assets/d521057e-0cdc-41a1-a73b-867572f9f9e8)
+
 ## Future Enhancements
 
 - Add more advanced SQL query handling for complex joins and conditions.
